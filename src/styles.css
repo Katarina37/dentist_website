@@ -2442,3 +2442,18 @@ a {
     transform: translateY(0);
   }
 }
+
+/* fallback za stare Safari-je bez aspect-ratio */
+@supports not (aspect-ratio: 1 / 1) {
+  .photo.hero-photo { height: 320px; }
+  .about-image-main .photo { height: 320px; }
+  .photo.services-photo { height: 380px; }
+  .photo.portrait { height: 280px; }
+}
+
+/* zaštita od horizontalnog skrolanja na iOS-u */
+html { overflow-x: hidden; }
+
+/* prefiks za blur */
+.nav { -webkit-backdrop-filter: blur(12px); }
+.hero-trust { -webkit-backdrop-filter: blur(8px); }
